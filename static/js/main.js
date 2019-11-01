@@ -58,6 +58,8 @@ $(document).ready(function(){
 
 //********  Forms CALLBACK
 // Добывляем стили для эффекта отъезда поля
+if(document.getElementById('first-name') & document.getElementById('text-post')){
+
 document.getElementById('first-name').addEventListener('focus', function(){
     this.parentElement.classList.add('focus');
      });
@@ -76,6 +78,7 @@ document.getElementById('text-post').addEventListener('blur', function(){
             this.parentElement.classList.remove('focus')}
     // else {this.classList.add('scalable')};
      });
+};
 
 
 
