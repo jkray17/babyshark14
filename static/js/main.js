@@ -58,7 +58,7 @@ $(document).ready(function(){
 
 //********  Forms CALLBACK
 // Добывляем стили для эффекта отъезда поля
-if(document.getElementById('first-name') & document.getElementById('text-post')){
+if(document.getElementById('first-name') !== null & document.getElementById('text-post') !== null){
 
 document.getElementById('first-name').addEventListener('focus', function(){
     this.parentElement.classList.add('focus');
