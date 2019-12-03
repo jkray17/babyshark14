@@ -1,4 +1,28 @@
 $(document).ready(function () {
+ 
+// (function () {
+    // var klac = document.querySelectorAll('.front');
+    // console.log(klac[0]);
+    // klac[0].addEventListener('click', () => {
+
+    // });
+
+
+    // $('.front, .back').click( function(e) {
+    //   e.preventDefault();
+    //   $(this).toggleClass('act');
+    //   $('.klac').toggleClass('act');
+    // });
+    // $('.flip').click( function() {
+    //  // e.preventDefault();
+    //   $(this).toggleClass('red');
+    //     $('.klac').toggleClass('act');
+      
+    // });
+// }());
+
+
+
     // svg4everybody(rawopts: {}); разобраться шо за хрень
 
     var sandwich = function () {
@@ -91,14 +115,17 @@ document.getElementById('text-post').addEventListener('blur', function(){
     // var modalBtnClose = document.querySelector('#modal-close-btn');
     var modalBtnOpen = document.querySelector('[data-key="welcome_video"]');
     var modalBtnClose = document.getElementById('modal-close-btn');
-    modalBtnOpen.addEventListener('click',  () => {
-        modalVideo.style.display = "block"
-    });
-    modalBtnClose.addEventListener('click',  () => {
+    if(modalBtnOpen) {
+        modalBtnOpen.addEventListener('click',  () => {
+            modalVideo.style.display = "block"
+        })
+    };
+    if(modalBtnClose) {
+        modalBtnClose.addEventListener('click',  () => {
         // document.querySelector('#modal').style.display = "none";
         modalVideo.style.display = "none"
      });
-    modalBtnClose.addEventListener('click', function() {
+        modalBtnClose.addEventListener('click', function() {
         modalVideo.style.display = "none";
         // выключение плеера при закрытии модокна
         $('#modal-video').each(function(){
@@ -110,6 +137,7 @@ document.getElementById('text-post').addEventListener('blur', function(){
             });
 
         });
+    };
 
 
 
@@ -155,6 +183,31 @@ $('.slider-small').slick({
     focusOnSelect: true,
     dots: false
 });
+
+// ***** FLIP CARD *****
+(function () {
+    // var klac = document.querySelectorAll('.front');
+    // console.log('jdhfksdhfk');
+    // klac[0].addEventListener('click', () => {
+
+    // });
+
+
+    $('.front, .back').click( function(e) {
+      e.preventDefault();
+      $(this.parentElement).toggleClass('act');
+      console.log(this.parentNode);
+      console.log(this.parentElement);
+      // $('.klac').toggleClass('act');
+    });
+    $('.flip').click( function() {
+     // e.preventDefault();
+      $(this).toggleClass('red');
+        $('.klac').toggleClass('act');
+      
+    });
+}());
+
 // **** ring-slider ****
 // $('.slider-ring').slick({
 //     dots:true,
@@ -277,3 +330,4 @@ $('.slider-small').slick({
 
 
 }());
+
